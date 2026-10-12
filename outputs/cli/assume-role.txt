@@ -1,0 +1,31 @@
+~ $ aws sts get-caller-identity 
+{
+    "UserId": "XXX:XXX",
+    "Account": "XXX",
+    "Arn": "arn:aws:sts::XXX:assumed-role/AccountFullAccessRole/XXX"
+}
+
+~ $ aws sts assume-role --role-arn "arn:aws:iam::XXX:role/s3-readonly-test"
+
+~ $ export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+
+~ $ aws sts get-caller-identity 
+{
+    "UserId": "XXX:XXX",
+    "Account": "XXX",
+    "Arn": "arn:aws:sts::XXX:assumed-role/s3-readonly-test/XXX"
+}
+
+~ $ aws s3 ls
+
+~ $ aws s3 mb s3://abcd
+make_bucket failed: s3://random-name-992864526171 An error occurred (AccessDenied) when calling the CreateBucket operation: User: arn:aws:sts::XXX:assumed-role/s3-readonly-test/XXX is not authorized to perform: s3:CreateBucket on resource: "arn:aws:s3:::random-name-992864526171" because no identity-based policy allows the s3:CreateBucket action
+
+~ $ unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+
+~ $ aws sts get-caller-identity 
+{
+    "UserId": "XXX:XXX",
+    "Account": "XXX",
+    "Arn": "arn:aws:sts::XXX:assumed-role/AccountFullAccessRole/XXX"
+}

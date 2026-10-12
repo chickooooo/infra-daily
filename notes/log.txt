@@ -1,3 +1,4 @@
 Task 1: Setup MFA and monthly budget.
-Task 2: Daily login as a team member. Root kept for owner-only actions.
+Task 2: Add a team member. Root kept for owner-only actions.
 Task 3: Try out AWS CLI in CloudShell.
+Task 4: IAM role with S3 read-only; assumed it via STS, s3 ls allowed, CreateBucket AccessDenied (implicit deny).
