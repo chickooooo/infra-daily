@@ -1,0 +1,18 @@
+~ $ aws sts get-caller-identity 
+// Role: s3-readonly-test
+
+
+~ $ aws s3 ls s3://infra-daily-0983342
+2026-10-14 08:20:28          6 hello.txt
+
+
+~ $ aws s3 cp s3://infra-daily-0983342/hello.txt -
+Hola!
+
+
+~ $ aws s3 ls
+aws: [ERROR]: An error occurred (AccessDenied) when calling the ListBuckets operation: User: arn:aws:sts::... is not authorized to perform: s3:ListAllMyBuckets because no identity-based policy allows the s3:ListAllMyBuckets action
+
+
+~ $ echo hi > x.txt && aws s3 cp x.txt s3://infra-daily-0983342/
+upload failed: ./x.txt to s3://infra-daily-0983342/x.txt An error occurred (AccessDenied) when calling the PutObject operation: User: arn:aws:sts::... is not authorized to perform: s3:PutObject on resource: "arn:aws:s3:::infra-daily-0983342/x.txt" because no identity-based policy allows the s3:PutObject action
