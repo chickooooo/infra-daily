@@ -18,6 +18,7 @@ override.tf.json
 *_override.tf
 
 # Local tooling
+.vscode/
 .claude/
 .DS_Store
 __pycache__/

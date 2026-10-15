@@ -1,0 +1,41 @@
+❯ curl -i localhost:8000/
+HTTP/1.1 200 OK
+date: Thu, 15 Oct 2026 13:40:02 GMT
+server: uvicorn
+content-length: 37
+content-type: application/json
+
+{"message":"Hello from infra-daily!"}%
+
+
+
+❯ curl -i localhost:8000/health
+HTTP/1.1 200 OK
+date: Thu, 15 Oct 2026 13:40:05 GMT
+server: uvicorn
+content-length: 15
+content-type: application/json
+
+{"status":"ok"}%
+
+
+
+❯ curl -i localhost:8000/abcd  
+HTTP/1.1 404 Not Found
+date: Thu, 15 Oct 2026 13:40:09 GMT
+server: uvicorn
+content-length: 22
+content-type: application/json
+
+{"detail":"Not Found"}%
+
+
+
+❯ curl -i localhost:9000/health
+HTTP/1.1 200 OK
+date: Thu, 15 Oct 2026 13:40:53 GMT
+server: uvicorn
+content-length: 15
+content-type: application/json
+
+{"status":"ok"}%

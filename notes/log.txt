@@ -3,3 +3,4 @@ Task 2: Add a team member. Root kept for owner-only actions.
 Task 3: Try out AWS CLI in CloudShell.
 Task 4: IAM role with S3 read-only; assumed it via STS, s3 ls allowed, CreateBucket AccessDenied (implicit deny).
 Task 5: Create a custom inline policy for a role.
+Task 6: Create a FastAPI web server with `/` & `/health` endpoints.
