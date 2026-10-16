@@ -1,0 +1,32 @@
+## Core Concepts
+
+<br>
+<br>
+<br>
+
+### Amazon Resource Name - ARN
+
+- It is the full address of one thing in AWS.
+- Example: a role, a bucket, a file in a bucket or a queue.
+- No two things in AWS share the same ARN.
+
+<br>
+
+Format:
+```
+arn : aws : service : region : account-id : resource
+```
+
+<br>
+
+| Example | What it is |
+|---|---|
+| `arn:aws:iam::XXX:role/s3-readonly-test` | Our role (IAM is global, so the region is empty) |
+| `arn:aws:s3:::my-bucket` | A bucket (bucket names are globally unique, so region and account are empty) |
+| `arn:aws:s3:::my-bucket/*` | Every object inside that bucket |
+| `arn:aws:sqs:ap-southeast-2:XXX:orders` | A queue in Sydney |
+
+<br>
+
+- Empty fields are normal. Region and account are left blank for things that don't need them.
+- `*` is a wildcard, so one ARN can cover many things, like "all objects in this bucket".

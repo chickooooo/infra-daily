@@ -44,3 +44,41 @@
 - Example: An EC2 instance gets a role that can list buckets but not create them.
 - Each role has a **Session Duration**. It defines the maximum duration an entity can assume the role for.
 - AWS services automatically refresh the session before it expires.
+
+<br>
+<br>
+
+### Policy
+
+- A policy controls access to AWS services such as S3, EC2, and RDS.
+- Policies can be attached to IAM users, groups, or roles.
+- It is a JSON document made up of statements. Each statement says:
+
+<br>
+
+| Field | Meaning | Example |
+|---|---|---|
+| `Effect` | Allow or Deny | `"Allow"` |
+| `Action` | Which API calls | `"s3:GetObject"` |
+| `Resource` | Which things, by **ARN** | `"arn:aws:s3:::my-bucket/*"` |
+
+<br>
+
+- **Least Privilege**: Give users only the permissions they need to do their jobs.
+- Policy that allows to get objects from the given bucket:
+
+<br>
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GetObject",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject"],
+      "Resource": ["arn:aws:s3:::infra-daily-0983342/*"]
+    }
+  ]
+}
+```
