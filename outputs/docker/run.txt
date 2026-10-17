@@ -1,0 +1,48 @@
+❯ docker run -d --name id-app -p 8000:8000 infra-daily-app
+ae884f419435d116e5c639de063cb0ee8c65afa2fe440f702775a1950bd2cc69
+
+
+❯ curl -i localhost:8000/health
+HTTP/1.1 200 OK
+date: Fri, 16 Oct 2026 14:05:09 GMT
+server: uvicorn
+content-length: 15
+content-type: application/json
+
+{"status":"ok"}
+
+
+❯ docker ps
+CONTAINER ID   IMAGE             COMMAND            CREATED          STATUS          PORTS                                         NAMES
+ae884f419435   infra-daily-app   "uv run main.py"   49 seconds ago   Up 48 seconds   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   id-app
+
+
+❯ docker logs id-app
+INFO:     Started server process [9]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.215.1:50614 - "GET /health HTTP/1.1" 200 OK
+
+
+❯ docker rm -f id-app
+id-app
+
+
+❯ docker run -d --name id-app -p 9000:9000 -e PORT=9000 infra-daily-app
+81c91f5569e7cad99ce695ea7966403ecb01c3572fa26af20de24cacb8e2e067
+
+
+❯ curl -i localhost:9000/health
+HTTP/1.1 200 OK
+date: Fri, 16 Oct 2026 14:08:38 GMT
+server: uvicorn
+content-length: 15
+content-type: application/json
+
+{"status":"ok"}
+
+
+❯ docker images infra-daily-app
+IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+infra-daily-app:latest   37c3aa11cadb        285MB         68.1MB    U
