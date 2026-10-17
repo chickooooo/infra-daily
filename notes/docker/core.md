@@ -53,10 +53,10 @@ CMD ["python", "app.py"]
 
 - Port Mapping:
     - An application listens on a port inside its container.
-    - To access it from another machine, you need to publish that port.
+    - To access it from another machine, we need to publish that port.
     - Example: `docker run -p 9000:8000 my-app`
     - Format: `-p <HOST_PORT>:<CONTAINER_PORT>`
-    - Here, port 9000 on your Mac forwards traffic to port 8000 inside the container.
+    - Here, port 9000 on our Mac forwards traffic to port 8000 inside the container.
 
 <br>
 

@@ -12,6 +12,7 @@
 
 <br>
 <br>
+<br>
 
 ### Key points
 
@@ -24,6 +25,7 @@
     - We pay for the amount of data stored (GB/month).
     - Charges also apply for API requests (PUT, GET, etc.) and retrieving data.
 
+<br>
 <br>
 <br>
 

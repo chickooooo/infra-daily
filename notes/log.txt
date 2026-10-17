@@ -5,3 +5,5 @@ Task 4: IAM role with S3 read-only; assumed it via STS, s3 ls allowed, CreateBuc
 Task 5: Create a custom inline policy for a role.
 Task 6: Create a FastAPI web server with `/` & `/health` endpoints.
 Task 7: AWS CLI local setup with profile.
+Task 8: Dockerize FastAPI web server.
+Task 9: Push docker image to ECR.
