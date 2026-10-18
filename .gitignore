@@ -24,3 +24,8 @@ override.tf.json
 __pycache__/
 .venv
 rough/
+
+# Generated voice-over audio (Amazon Polly) and rendered videos
+*.mp3
+*.wav
+*.mp4
