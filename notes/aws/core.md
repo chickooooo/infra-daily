@@ -49,3 +49,14 @@ arn : aws : service : region : account-id : resource
 Why do we need separate regions?
 - **Speed:** Data takes time to travel. A region closer to our users will serve them faster.
 - **Law:** Some countries want certain data to stay inside their borders.
+
+<br>
+<br>
+<br>
+
+### AWS Availability Zone - AZ
+
+- An Availability Zone denotes one group of data centers within an AWS Region.
+- Example: Mumbai Region has 3 AZs: `ap-south-1a`, `ap-south-1b` & `ap-south-1c`.
+- If one AZ fails, our application can continue running in another AZ, within the same region.
+- Each AZ is designed to be independent of failures in other AZs.
