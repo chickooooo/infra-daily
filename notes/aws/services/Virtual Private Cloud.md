@@ -57,3 +57,35 @@
 - One AZ can hold multiple subnets.
 - Most setups generally have 2 subnets per AZ. One public & one private.
 - 5 addresses in every subnet is reversed by AWS.
+
+<br>
+<br>
+<br>
+
+## Internet Gateway
+
+<br>
+
+### Overview
+
+- Internet gateway is also written as **IGW**.
+- It allows resources in a VPC to communicate with the internet.
+
+<br>
+
+### How it works
+
+- Create an Internet Gateway and attach it to the VPC.
+- Add a route to the internet gateway in the route table (`0.0.0.0/0`).
+- Configure the EC2 instance with a public IP and appropriate security rules.
+- This EC2 instance can now communicate with the internet.
+- **Note:**
+    - An Internet Gateway alone does not make the EC2 instance publicly accessible.
+    - We also need the correct routing, public IP, and security settings.
+
+<br>
+
+### Features:
+
+- One VPC can have only 1 IGW. And vice-versa.
+- It's free of cost and managed by AWS.
