@@ -89,3 +89,39 @@
 
 - One VPC can have only 1 IGW. And vice-versa.
 - It's free of cost and managed by AWS.
+
+<br>
+<br>
+<br>
+
+## Route Table
+
+<br>
+
+### Overview
+
+- It is a table containing a set of rules that tells network traffic where to go inside our VPC.
+- These rules are known as **Routes**.
+- Each route has a destination and a target.
+
+<br>
+
+| Destination | Target | Meaning |
+| --- | --- | --- |
+| `172.31.0.0/16` | `local` | Traffic stays inside the VPC |
+| `0.0.0.0/0` | `igw-12345` | Traffic goes toward the Internet Gateway |
+
+<br>
+
+### Features
+
+- Every VPC automatically gets a main route table.
+- A VPC can have multiple route tables.
+- Each subnet is associated with one route table at a time.
+- A route table can be associated with multiple subnets.
+
+<br>
+
+### More
+
+- A subnet is public if it's route table has this entry:  `0.0.0.0/0` -> `igw-12345`
