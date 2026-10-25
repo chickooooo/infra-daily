@@ -124,4 +124,34 @@
 
 ### More
 
-- A subnet is public if it's route table has this entry:  `0.0.0.0/0` -> `igw-12345`
+- A subnet is public if it's route table has this entry:  `0.0.0.0/0` -> `igw-12345`.
+- When selecting a route from the route table, most specific one is selected.
+- Example: If the destination is `172.31.10.12`, then `172.31.0.0/16` is selected instead of `0.0.0.0/0`.
+
+<br>
+<br>
+<br>
+
+## Elastic IP
+
+<br>
+
+### Overview
+
+- Elastic IP is also written as **EIP**.
+- It is a static public IPv4 address that we can allocate to our AWS resources.
+
+<br>
+
+### Why it is needed?
+
+- Normally, a resource's public IP can change when we stop and start it.
+- An Elastic IP gives it a fixed public IP address.
+
+<br>
+
+### Features
+
+- **Static:** The IP address stays the same.
+- **Reassignable:** We can move it from one resource to another.
+- **Cost:** We pay an hourly charge for each Elastic IP, whether it is attached or not.
