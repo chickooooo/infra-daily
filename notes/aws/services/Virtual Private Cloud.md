@@ -155,3 +155,41 @@
 - **Static:** The IP address stays the same.
 - **Reassignable:** We can move it from one resource to another.
 - **Cost:** We pay an hourly charge for each Elastic IP, whether it is attached or not.
+
+<br>
+<br>
+<br>
+
+## NAT Gateway
+
+<br>
+
+### Overview
+
+- It allows resources in a private subnet to access the internet.
+- But it does not allow the internet to initiate connections directly to those resources.
+
+<br>
+
+### When it is needed?
+
+- A service needs to download packages or call an external API.
+- A NAT Gateway lets it make those outbound connections without exposing the instance directly to the internet.
+
+<br>
+
+### Features
+
+- It lives in a public subnet so it can access the internet.
+- A new route is added in the private subnet's route table for NAT gateway: `0.0.0.0/0` -> `nat-123`.
+- We pay for the NAT Gateway's running time and the data it processes, plus applicable data transfer charges.
+- A NAT gateway lives in one AZ.
+
+<br>
+
+### Important
+
+- NAT gateway also charges for data transfer. So pulling large docker images is expensive.
+- Services like S3, ECR, Secrets Manager, CloudWatch logs, etc. don't live inside the VPC.
+- So, data transfer between the app and those services is charged.
+- There's a solution for this: VPC endpoint.
