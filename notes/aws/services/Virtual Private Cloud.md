@@ -193,3 +193,27 @@
 - Services like S3, ECR, Secrets Manager, CloudWatch logs, etc. don't live inside the VPC.
 - So, data transfer between the app and those services is charged.
 - There's a solution for this: VPC endpoint.
+
+<br>
+<br>
+<br>
+
+## VPC Endpoint
+
+### Overview
+
+- It allows resources inside a VPC to privately connect to supported AWS services.
+- Without going through the public internet.
+- This reduces NAT Gateway data processing costs when accessing services like S3 or DynamoDB.
+
+### Types:
+
+- **Gateway Endpoint:**
+    - Used for S3 and DynamoDB. No additional endpoint charge.
+    - A route is added to the route table for Gateway Endpoints.
+
+- **Interface Endpoint:**
+    - Commonly used for services like ECR, Secrets Manager and CloudWatch Logs.
+    - Uses AWS PrivateLink and creates private network interfaces (ENIs) in the subnets.
+    - It uses private IP addresses and DNS, no route in RT needed.
+    - It generally charges for endpoint uptime and data processed.
