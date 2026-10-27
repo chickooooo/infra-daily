@@ -200,13 +200,17 @@
 
 ## VPC Endpoint
 
+<br>
+
 ### Overview
 
 - It allows resources inside a VPC to privately connect to supported AWS services.
 - Without going through the public internet.
 - This reduces NAT Gateway data processing costs when accessing services like S3 or DynamoDB.
 
-### Types:
+<br>
+
+### Types
 
 - **Gateway Endpoint:**
     - Used for S3 and DynamoDB. No additional endpoint charge.
@@ -217,3 +221,11 @@
     - Uses AWS PrivateLink and creates private network interfaces (ENIs) in the subnets.
     - It uses private IP addresses and DNS, no route in RT needed.
     - It generally charges for endpoint uptime and data processed.
+
+<br>
+
+### Important
+
+- They can reduce NAT Gateway costs.
+- For Docker image pulls from ECR, we may need ECR API and ECR Docker endpoints, plus an S3 Gateway Endpoint for image layers.
+- A VPC Endpoint does not automatically grant access to a service. IAM policies, endpoint policies, security groups (for Interface Endpoints), and service-specific permissions still apply.
