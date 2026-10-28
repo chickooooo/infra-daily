@@ -229,3 +229,35 @@
 - They can reduce NAT Gateway costs.
 - For Docker image pulls from ECR, we may need ECR API and ECR Docker endpoints, plus an S3 Gateway Endpoint for image layers.
 - A VPC Endpoint does not automatically grant access to a service. IAM policies, endpoint policies, security groups (for Interface Endpoints), and service-specific permissions still apply.
+
+<br>
+<br>
+<br>
+
+## Security Group
+
+<br>
+
+### Overview
+
+- Security Groups act as a virtual firewall for AWS resources.
+- They control which traffic is allowed to enter and leave our resources.
+
+<br>
+
+### Features
+
+- **Inbound Rules:** Control incoming traffic (e.g., allow SSH on port 22).
+- **Outbound Rules:** Control outgoing traffic (e.g., allow internet access).
+- **Allow Rules Only:** Security Groups allow traffic; they don't have deny rules.
+- **Stateful:** If incoming traffic is allowed, the response traffic is automatically allowed.
+- **Attached to Resources:** Mainly associated with EC2 instances and other AWS resources.
+ 
+<br>
+
+### Rules
+
+- A Security group holds a list of inbound and outbound rules.
+- Inbound rule defines: the protocol, port and source. Example: Allow TCP to 8000 from `10.0.0.0/16`.
+- Outbound rule defines: the protocol, port and destination. Example: Allow TCP from 8000 to `0.0.0.0/0`.
+- A rule source/destination can be another security group as well. Example: Allow TCP to 8000 from `load-balancer-sg`.
