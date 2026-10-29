@@ -261,3 +261,28 @@
 - Inbound rule defines: the protocol, port and source. Example: Allow TCP to 8000 from `10.0.0.0/16`.
 - Outbound rule defines: the protocol, port and destination. Example: Allow TCP from 8000 to `0.0.0.0/0`.
 - A rule source/destination can be another security group as well. Example: Allow TCP to 8000 from `load-balancer-sg`.
+
+<br>
+<br>
+<br>
+
+## Network ACL
+
+<br>
+
+### Overview
+
+- Network ACL stands for **Network Access Control List**.
+- It is a security layer that acts as a firewall at the Subnet level.
+- It controls incoming and outgoing network traffic for resources within a subnet.
+
+<br>
+
+### Features
+
+- **Inbound Rules:** Control incoming traffic to the subnet.
+- **Outbound Rules:** Control outgoing traffic from the subnet.
+- **Allow and Deny Rules:** Supports both ALLOW and DENY rules.
+- **Stateless:** If inbound traffic is allowed, outbound response traffic must also be explicitly allowed.
+- **Rule Number Priority:** Rules are evaluated in ascending order (lowest rule number first).
+- **Subnet Level:** Associated with one or more subnets.
