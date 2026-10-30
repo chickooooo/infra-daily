@@ -286,3 +286,27 @@
 - **Stateless:** If inbound traffic is allowed, outbound response traffic must also be explicitly allowed.
 - **Rule Number Priority:** Rules are evaluated in ascending order (lowest rule number first).
 - **Subnet Level:** Associated with one or more subnets.
+
+<br>
+<br>
+<br>
+
+## VPC Peering
+
+<br>
+
+### Overview
+
+- It is a networking connection between 2 VPCs.
+- It allows resources in both VPCs to communicate with each other privately using their private IP addresses.
+
+<br>
+
+### Features
+
+- Traffic travels through AWS's private network, not via internet.
+- VPCs can belong to different AWS accounts.
+- Supports inter-region VPC peering.
+- The VPCs must have non-overlapping IPv4 CIDR ranges.
+- No Transitive Peering: If VPC A is connected to VPC B, and VPC B is connected to VPC C, VPC A cannot communicate with VPC C through VPC B.
+- AWS charges for data transferred through the peering connection.
