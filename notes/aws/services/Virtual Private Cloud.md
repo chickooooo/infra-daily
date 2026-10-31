@@ -252,6 +252,7 @@
 - **Allow Rules Only:** Security Groups allow traffic; they don't have deny rules.
 - **Stateful:** If incoming traffic is allowed, the response traffic is automatically allowed.
 - **Attached to Resources:** Mainly associated with EC2 instances and other AWS resources.
+- Security Groups on their own costs nothing. 
  
 <br>
 

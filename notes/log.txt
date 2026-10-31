@@ -8,3 +8,4 @@ Task 7: AWS CLI local setup with profile.
 Task 8: Dockerize FastAPI web server.
 Task 9: Push docker image to ECR.
 Task 10: Explore default VPC.
+Task 11: Create security groups.
