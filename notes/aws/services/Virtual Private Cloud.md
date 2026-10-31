@@ -310,3 +310,25 @@
 - The VPCs must have non-overlapping IPv4 CIDR ranges.
 - No Transitive Peering: If VPC A is connected to VPC B, and VPC B is connected to VPC C, VPC A cannot communicate with VPC C through VPC B.
 - AWS charges for data transferred through the peering connection.
+
+<br>
+<br>
+<br>
+
+## Transit Gateway
+
+<br>
+
+### Overview
+
+- It is a networking service that acts as a central hub to connect multiple VPCs.
+- It allows them to communicate with each other through a single gateway.
+
+<br>
+
+### Features
+
+- Avoids creating individual VPC peering connections between every VPC.
+- Connect on-premises networks using VPN or AWS Direct Connect.
+- Connect VPCs across different AWS regions using Transit Gateway peering.
+- Hourly and data processing charges.
